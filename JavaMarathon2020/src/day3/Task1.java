@@ -20,7 +20,6 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        int i = 1;
         while (true) {
             String input = scan.nextLine().toLowerCase();
             if (input.equalsIgnoreCase("stop")) {
@@ -28,7 +27,7 @@ public class Task1 {
             }
             switch (input) {
                 case "москва":
-                case "младивосток":
+                case "владивосток":
                 case "ростов":
                     System.out.println("Россия");
                     break;
@@ -50,7 +49,6 @@ public class Task1 {
                 default:
                     System.out.println("Неизвестная страна");
             }
-            i++;
         }
     }
 }
