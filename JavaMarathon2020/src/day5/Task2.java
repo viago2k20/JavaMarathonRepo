@@ -10,6 +10,5 @@ public class Task2 {
     public static void main(String[] args) {
         Motorbike motorbike1 = new Motorbike(1956, "Black", "Batcycle");
         motorbike1.getInfo();
-
     }
 }
