@@ -11,6 +11,8 @@
 
 package day6;
 
+import java.util.Random;
+
 public class Teacher {
     private String fio;
     private String subject;
@@ -22,7 +24,7 @@ public class Teacher {
 
     public void rateAStudent(String fioStudent) {
         int score = (int) (Math.random() * ((5 - 2) + 1)) + 2;
-        System.out.print("Преподователь " + fio + " оценил студента " + fioStudent + " по предмету " + subject + " на оценку: ");
+        System.out.print("Преподаватель " + fio + " оценил студента " + fioStudent + " по предмету " + subject + " на оценку: ");
         switch (score) {
             case 2:
                 System.out.print(" Неудовлетворительно");
@@ -37,5 +39,28 @@ public class Teacher {
                 System.out.print(" Отлично");
                 break;
         }
+        System.out.println("");
+    }
+
+    public void evaluate(Student student) {
+        Random random = new Random();
+        int randomFrom2to5 = random.nextInt(4) + 2;
+        String score = "";
+        switch (randomFrom2to5) {
+            case 2:
+                score = "Неудовлетворительно";
+                break;
+            case 3:
+                score = "Удовлетворительно";
+                break;
+            case 4:
+                score =" Хорошо";
+                break;
+            case 5:
+                score =" Отлично";
+                break;
+        }
+        System.out.println("Преподаватель " + this.fio + " оценил студента " + student.getFio()
+                + " по предмету " + this.subject + " на оценку: " + score);
     }
 }

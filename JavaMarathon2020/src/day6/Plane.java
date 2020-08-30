@@ -71,10 +71,9 @@ public class Plane {
     }
     //end block of setters and getters
 
-    //заполняем бак самолета
-    public void fillUp(double volumeFuel){
-        //this.volumeFuel = volumeFuel;     <---  Какой из вариантов предпочтительней/правильней?
-        setVolumeFuel(volumeFuel);     //   <---
+    //заправка бака самолета
+    public void fillUp(double fuel){
+        volumeFuel += fuel;
     }
 
     //метод выдает информацию о самолете и объеме топлива

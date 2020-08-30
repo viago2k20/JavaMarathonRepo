@@ -17,8 +17,11 @@ public class Task3 {
     public static void main(String[] args) {
         Teacher teacher1 = new Teacher("Иванов", "Математика");
         Student student1 = new Student("Васечкин");
+        Student student2 = new Student("Петров");
+
 
         teacher1.rateAStudent(student1.getFio());
+        teacher1.evaluate(student2);
 
     }
 }

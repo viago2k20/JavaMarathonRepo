@@ -21,8 +21,8 @@ public class Task2 {
 
         plane1.setYear(1983);
         plane1.setPlaneLength(60.0);
-        plane1.fillUp(92000);//полный бак
-        plane1.fillUp(32000);//после первого полета
+        plane1.fillUp(92000);//первая заправка бака
+        plane1.fillUp(32000);//вторая заправка бака
 
         plane1.info();
 
