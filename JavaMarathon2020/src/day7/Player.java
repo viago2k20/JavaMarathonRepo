@@ -4,11 +4,13 @@ import java.util.Random;
 
 public class Player {
     int stamina;
+    private boolean playerCanRun;
     public static final int MAX_STAMINA = 100;
     public static final int MIN_STAMINA = 0;
     static int countPlayers;
 
     public Player() {
+        this.playerCanRun = true;
         Random random = new Random();
         stamina = random.nextInt(11) + 90;
         if (countPlayers < 6) {
@@ -20,10 +22,16 @@ public class Player {
 
     //метод run
     public void run() {
-        this.stamina = this.stamina - 1;
-        if (this.stamina == MIN_STAMINA){
-            System.out.println("Игроку нужен отдых! Игрок уходит с поля");
-            countPlayers --;
+        if (playerCanRun) {
+            this.stamina = this.stamina - 1;
+            if (this.stamina == 0) {
+                System.out.println("Игроку нужен отдых! Игрок уходит с поля");
+                countPlayers--;
+                playerCanRun = false;
+            }
+
+        } else {
+            System.out.println("Выносливость игрока на нуле!");
         }
     }
 

@@ -67,6 +67,11 @@ public class Task2 {
             player1.run();
         }
 
+        player1.run();
+        player1.run();
+        System.out.println("\nВыносливость ПЕРВОГО игрока " + player1.stamina);
+
+
         System.out.println("Количество игроков на поле: " + Player.countPlayers);
         Player.info();
 
