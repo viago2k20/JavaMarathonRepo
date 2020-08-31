@@ -29,10 +29,15 @@ public class Plane {
         this.planeWeight = planeWeight;
         this.volumeFuel = 0;
     }
+
     //переопределение метода toString!
-    public String toString(){
-        info();
-        return "";
+    public String toString() {
+
+        return "Изготовитель: " + getAircraftManufacturer()
+                + "\nГод выпуска: " + getYear()
+                + "\nДлина: " + getPlaneLength()
+                + "\tВес: " + getPlaneWeight()
+                + "\tОбъем топлива в баке: " + getVolumeFuel();
     }
 
     //block of setters and getters
@@ -78,12 +83,12 @@ public class Plane {
     //end block of setters and getters
 
     //заправка бака самолета
-    public void fillUp(double fuel){
+    public void fillUp(double fuel) {
         volumeFuel += fuel;
     }
 
     //метод выдает информацию о самолете и объеме топлива
-    public void info(){
+    public void info() {
         System.out.println("Изготовитель: " + getAircraftManufacturer());
         System.out.println("Год выпуска: " + getYear());
         System.out.println("Длина: " + getPlaneLength());
