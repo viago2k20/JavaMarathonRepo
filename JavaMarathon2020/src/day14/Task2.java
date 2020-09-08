@@ -11,7 +11,6 @@ public class Task2 {
     public static List<String> parseFileToStringList(List<String> input) {
         List<String> myList = new ArrayList<>();
         String[] number;
-
         for (String elements: input){
             number = elements.split(" ");
             if (Integer.parseInt((number[1])) < 0){
@@ -40,6 +39,3 @@ public class Task2 {
         System.out.println(parseFileToStringList(strList));
     }
 }
-
-
-////////
