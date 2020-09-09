@@ -53,10 +53,10 @@ public class Task2 {
         for (int i = 0; i < y; i = i + 20) {
             double sum = 0;
             for (int j = i; j < (i + 20); j++) {
-                sum += (double) Integer.parseInt(number[j]) / 20;
+                sum += (double) Integer.parseInt(number[j]);
             }
             //System.out.print(sum + " ");
-            pwToTwo.print(sum + " ");//запись чисел в файл FileTwoDay16
+            pwToTwo.print(sum/20 + " ");//запись чисел в файл FileTwoDay16
         }
         pwToTwo.close();
 
