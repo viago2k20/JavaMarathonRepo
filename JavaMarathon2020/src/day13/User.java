@@ -36,13 +36,14 @@ import static day13.MessageDatabase.sendMessage;
 
 public class User {
     private String username;
-    private List<String> subscriptions;
+    private List<User> subscriptions;
+    //private List<String> subscriptions;
+
 
     //constructor
     public User(String username) {
-
         this.username = username;
-        subscriptions = new ArrayList<>();//инициализируем пустой список
+        this.subscriptions = new ArrayList<>();//инициализируем пустой список
     }
 
     //getters
@@ -50,20 +51,20 @@ public class User {
         return username;
     }
 
-    public List<String> getSubscriptions() {
+    public List<User> getSubscriptions() {
         return subscriptions;
     }
 
     //methods
     //подписывает пользователя на пользователя user
     public void subscribe(User user) {
-        subscriptions.add(user.getUsername());
+        subscriptions.add(user);
     }
 
     //возвращает True, если пользователь подписан
     // на пользователя user и False, если не подписан.
     public boolean isSubscribed(User user) {
-        if(subscriptions.contains(user.username)){
+        if(subscriptions.contains(user.getUsername())){
             System.out.println(this.username + " подписан на пользователя " + user.getUsername());
             return true;
         }else{
@@ -93,7 +94,7 @@ public class User {
         if (subscriptions == null) {                //<---- не понятно почему не срабатывает условие?
             System.out.println("Список пуст");      //если у пользователя нет подписчиков, значит и список пуст
         } else
-            for (String Subs : subscriptions) {
+            for (User Subs : subscriptions) {
                 System.out.println(Subs);
             }
     }
