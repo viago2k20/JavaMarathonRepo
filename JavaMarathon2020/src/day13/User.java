@@ -37,8 +37,6 @@ import static day13.MessageDatabase.sendMessage;
 public class User {
     private String username;
     private List<User> subscriptions;
-    //private List<String> subscriptions;
-
 
     //constructor
     public User(String username) {
@@ -64,10 +62,10 @@ public class User {
     //возвращает True, если пользователь подписан
     // на пользователя user и False, если не подписан.
     public boolean isSubscribed(User user) {
-        if(subscriptions.contains(user.getUsername())){
+        if (subscriptions.contains(user)) {
             System.out.println(this.username + " подписан на пользователя " + user.getUsername());
             return true;
-        }else{
+        } else {
             System.out.println(this.username + " не подписан на пользователя " + user.getUsername());
         }
         return false;
@@ -75,7 +73,10 @@ public class User {
 
     //private  boolean stat;
     public boolean isFriend(User user) {
-        if (user.subscriptions.contains(this.username) && subscriptions.contains(user.username)) {
+
+        if (user.subscriptions.contains(this) && subscriptions.contains(user)) {
+        //if (user.isSubscribed(this) && this.isSubscribed(user)) {// вариант через метод isSubscribed
+
             System.out.println(this.username + " и " + user.getUsername() + " Друзья");
             return true;
         } else
@@ -91,8 +92,8 @@ public class User {
 
     public void printSubscriptions() {
         System.out.print("Список пользователей, на кого подписан " + getUsername() + ": \n");
-        if (subscriptions == null) {                //<---- не понятно почему не срабатывает условие?
-            System.out.println("Список пуст");      //если у пользователя нет подписчиков, значит и список пуст
+        if (subscriptions.size() == 0) {
+            System.out.println("Список пуст, пользователь ни на кого не подписан!");
         } else
             for (User Subs : subscriptions) {
                 System.out.println(Subs);

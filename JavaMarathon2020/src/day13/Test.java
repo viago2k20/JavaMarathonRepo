@@ -30,10 +30,13 @@ public class Test {
         userDuke.printSubscriptions();
         System.out.println("");
 
-        System.out.println(userDuke.isFriend(userTom));
+        System.out.println(userTom.isFriend(userDuke));
         System.out.println("");
 
         System.out.println(userKate.isFriend(userTom));
+        System.out.println("");
+
+        System.out.println(userTom.isFriend(userKate));
         System.out.println("");
 
         userTom.sendMessage(userKate, "Привет, Kate!");
